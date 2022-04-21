@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class HomeWork7 {
     public static void main(String[] args) {
-        System.out.println("Task №1");
-        task1();
-        System.out.println("Task №2");
-        task2();
+//        System.out.println("Task №1");
+//        task1();
+//        System.out.println("Task №2");
+//        task2();
         System.out.println("Task №3");
         //task #3*
         int[] firstArray = new int[10];
@@ -21,8 +21,8 @@ public class HomeWork7 {
                 secondArray[i] = randomTask2();
             }
         }
-        System.out.println(Arrays.toString(firstArray));
-        System.out.println(Arrays.toString(secondArray));
+        System.out.println("Source : " + Arrays.toString(secondArray));
+        System.out.println("Target : " + Arrays.toString(firstArray));
         System.out.println(Arrays.toString(arrayCopy(firstArray, secondArray)));
     }
 
@@ -83,14 +83,14 @@ public class HomeWork7 {
         return (int) (Math.random() * 100 + 1);
     }
 
-    public static int[] arrayCopy(int[] array1, int[] array2) {
-        int[] resultArray = new int[array1.length + array2.length];
+    public static int[] arrayCopy(int[] arrayTarget, int[] arraySource) {
+        int[] resultArray = new int[arrayTarget.length + arraySource.length];
         int index = 0;
         for (int i = 0; i < resultArray.length; i++) {
-            if (i < array1.length) {
-                resultArray[i] = array1[i];
+            if (i < arrayTarget.length) {
+                resultArray[i] = arrayTarget[i];
             } else {
-                resultArray[i] = array2[index];
+                resultArray[i] = arraySource[index];
                 index++;
             }
         }
